@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Handbook Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏠 Hostel Handbook Assistant</h1>
+        <p>Ask questions about hostel rules and facilities</p>
+    </header>
+
+    <main>
+
+        <section class="upload-section">
+            <h2>Upload Hostel Handbook</h2>
+
+            <input type="file" id="handbookFile" accept=".pdf">
+
+            <button onclick="uploadHandbook()">Upload Handbook</button>
+
+            <p id="uploadStatus"></p>
+        </section>
+
+
+        <section class="assistant-section">
+
+            <h2>Ask Your Question</h2>
+
+           <div class="question-input-area">
+
+    <input
+        type="text"
+        id="question"
+        placeholder="Example: What are the mess timings?"
+    >
+
+    <button onclick="startVoiceInput()">🎤 Speak</button>
+
+    <button onclick="askQuestion()">Ask</button>
+
+</div>
+
+<p id="voiceStatus"></p>
+
+            <h3>Quick Questions</h3>
+
+            <div class="quick-buttons">
+                <button onclick="setQuestion('What are the hostel timings?')">
+                    Hostel Timings
+                </button>
+
+                <button onclick="setQuestion('What are the visitor rules?')">
+                    Visitor Rules
+                </button>
+
+                <button onclick="setQuestion('What are the mess timings?')">
+                    Mess Timings
+                </button>
+
+                <button onclick="setQuestion('What are the room rules?')">
+                    Room Rules
+                </button>
+
+                <button onclick="setQuestion('How do I report a maintenance problem?')">
+                    Maintenance
+                </button>
+
+                <button onclick="setQuestion('How can I make a complaint?')">
+                    Complaints
+                </button>
+            </div>
+
+<div class="answer-box">
+    <h3>💬 Conversation</h3>
+
+    <div id="chatHistory">
+        <p>
+            Your conversation will appear here.
+        </p>
+    </div>
+</div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
